@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Speech de visita · Mantis</title>
+<style>
+:root{--bg:#15171c;--surface:#1e2129;--surface2:#262a34;--text:#e8e6e1;--muted:#a9aeb9;--accent:#d9b26f;--border:#2e333e;--orange:#f08a24;--orange-bg:#3a2a16;--ok:#7fc49a}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:28px 16px 80px}
+h1{color:var(--accent);font-size:2rem;margin:0 0 6px}
+h2{color:var(--accent);font-size:1.25rem;margin:34px 0 10px}
+.sub{color:var(--muted);margin-bottom:18px}
+p{margin:0 0 10px}
+.say{background:var(--surface2);border-left:4px solid var(--accent);border-radius:10px;padding:12px 16px;margin:10px 0;font-style:italic}
+.note{background:var(--orange-bg);border:1px solid var(--orange);border-radius:10px;padding:12px 16px;margin:10px 0;color:#f5d6b3}
+.note b{color:var(--orange)}
+.safe{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 14px;margin:8px 0;color:var(--ok)}
+.tip{color:var(--muted);font-size:.95rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;margin:12px 0;overflow:hidden}
+.card summary{cursor:pointer;padding:14px 18px;font-weight:700;list-style:none}
+.card summary::-webkit-details-marker{display:none}
+.card summary::after{content:"+";float:right;color:var(--accent);font-size:1.3rem;line-height:1}
+.card[open] summary::after{content:"−"}
+.card .in{padding:0 18px 16px;border-top:1px solid var(--border)}
+.slide{display:inline-block;font-size:.8rem;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:1px 8px;margin-left:6px;font-weight:400}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.95rem}
+td,th{border-bottom:1px solid var(--border);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--accent)}
+.search{width:100%;font:inherit;padding:12px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface);color:var(--text);margin:14px 0}
+.toc a{color:var(--accent);text-decoration:none;display:block;padding:3px 0}
+button{font:inherit;cursor:pointer;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);padding:8px 14px;min-height:40px}
+footer{margin-top:40px;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Speech de visita · Mantis</h1>
+<div class="sub">Manual paso a paso para colaboradores. Orden de la visita, frases a usar, smart questions por giro y puntos a cuidar.</div>
+
+<div class="note"><b>Cómo leer este manual</b><br>
+<b>Texto normal</b> = lo que se dice. <b>Caja café</b> = lo que se dice con comillas, tal cual. <b>Caja naranja 🟠</b> = frase que puede usarse, pero con cuidado: lleva el riesgo y la versión segura. <b>Caja verde</b> = versión segura para decir siempre que la naranja sea cuestionada.<br><br>
+Regla de oro: si el cliente no lo dijo, no lo menciones. Nunca bajes el precio. Si no sabes algo, di "lo confirmo y le escribo".</div>
+
+<input class="search" id="q" type="search" placeholder="Buscar: radar, garantía, smart question, Maps, cupo..." aria-label="Buscar en el manual">
+
+<h2>Índice</h2>
+<div class="toc">
+<a href="#antes">0. Antes de llegar</a>
+<a href="#apertura">1. Apertura (slides 1 y 2)</a>
+<a href="#dolor">2. Descubrir el dolor: smart questions</a>
+<a href="#diagnostico">3. Diagnóstico de retorno (slide 3 · QR 1)</a>
+<a href="#situacion">4. Así es hoy, sin nosotros (slides 4 y 7)</a>
+<a href="#radar">5. Radar de oportunidad (slide 5 · QR 2)</a>
+<a href="#vision">6. Así llega un cliente nuevo (slide 8)</a>
+<a href="#metodo">7. Método y simulador (slides 9 y 10)</a>
+<a href="#que-construimos">8. Lo que construimos (slide 11)</a>
+<a href="#bonos">9. Bonos (slides 12 a 19)</a>
+<a href="#precio">10. Inversión, cupo y garantía (slides 20 a 22)</a>
+<a href="#mentoria">11. Mentoría y después (slide 22)</a>
+<a href="#cierre">12. Cierre y formas de pago (slide 23)</a>
+<a href="#disparadores">13. Disparadores sin cifras</a>
+<a href="#prohibidas">14. Frases que no se dicen</a>
+<a href="#checklist">15. Checklist antes de salir</a>
+</div>
+
+<h2 id="antes">0. Antes de llegar</h2>
+<div class="card"><details open><summary>Preparación</summary><div class="in">
+<ul>
+<li>Revisa la ficha de Google del negocio. Si algo está mal (horario, fotos, categoría), anótalo para decirlo como oportunidad, no como crítica.</li>
+<li>Ten listo el radar de la zona y del giro. Confirma que la cifra que vas a mencionar sale del radar.</li>
+<li>Ten listo el simulador con el nombre del negocio, y los tres QR (diagnóstico, radar, sitio).</li>
+<li>Lleva el contrato y el anexo. Si el cliente pide una garantía, lee la cláusula, no la improvises.</li>
+<li>Define quién atiende: el nombre de quien va a visitar se dice al inicio.</li>
+</ul>
+</div></details></div>
+
+<h2 id="apertura">1. Apertura <span class="slide">slides 1 y 2</span></h2>
+<div class="card" open><details open><summary>Frase de apertura</summary><div class="in">
+<div class="say">"Buenas tardes, ¿se encuentra el dueño o encargado? Soy [tu nombre] de Mantis Digital Agency. Nuestro estudio de mercado ubicó a su negocio muy potencialmente calificado entre su sector, y por eso venimos a proponerle una alianza digital estratégica. Solo formamos alianza con un número muy limitado de negocios para no canibalizar entre competencias. Hoy hay mucho tráfico digital en su mercado que casi nadie ha reclamado, queremos que con nuestra colaboración usted y nosotros nos quedemos con la mayor parte antes que su competencia lo haga y busquemos duplicar la facturación mensual en menos de dos meses con nuestro método Mantis. ¿Me da 10 minutos para explicárselo?"</div>
+<div class="note">🟠 <b>"Muy potencialmente calificado entre su sector."</b> Si el cliente pregunta por qué, no hay respuesta verificable. Si el radar da un dato concreto para su giro, úsalo; si no, di "buen potencial para aparecer mejor".</div>
+<div class="note">🟠 <b>"Para no canibalizar entre competencias."</b> Suena a exclusividad por sector, que no está definida. Lo que sí es verdad: "solo formamos alianza con un número muy limitado de negocios".</div>
+<div class="note">🟠 <b>"Mucho tráfico digital que casi nadie ha reclamado."</b> Solo se dice si el radar lo muestra para su giro y zona. Di "según nuestro radar".</div>
+<div class="note">🟠 <b>"Quedemos con la mayor parte antes que su competencia lo haga."</b> Presión competitiva. Se mantiene como ambición, no como resultado.</div>
+<div class="note">🟠 <b>"Duplicar la facturación mensual en menos de dos meses."</b> Riesgo ya registrado: es un resultado que no controlamos y el cliente lo usará para medirnos. La garantía escrita (entrega en 7 días y devolución de lo pagado) no lo cubre. Decisión tomada: se mantiene como lo dictaste.</div>
+<div class="note">🟠 <b>"Ya construyó el negocio; nosotros ponemos la tecnología para que más gente lo encuentre."</b><br>
+<b>Cuidado:</b> aceptable, pero "nosotros ponemos" puede sonar a regalo. Si el cliente lo toma así, di: "Usted pone su negocio y su inversión; nosotros ponemos el método, la construcción del sitio y el seguimiento."</div>
+<div class="note">🟠 <b>"Nuestro estudio de mercado ubicó a su negocio…"</b><br>
+<b>Solo si es verdad:</b> di lo que hiciste: "Revisamos negocios de [giro] en [zona] y el suyo tiene buen potencial para aparecer mejor."</div>
+</div></details></div>
+
+<h2 id="dolor">2. Descubrir el dolor: smart questions <span class="slide">slide 6</span></h2>
+<div class="card" open><details open><summary>Cómo hacerlo</summary><div class="in">
+<p>Antes de explicar nada, el cliente habla de su dolor. Como con el médico: que él diga qué le duele y por qué. Escucha, no interrumpas, y repite el dolor con sus palabras.</p>
+<div class="say">"¿Qué quiere lograr con su negocio este año?"<br>"¿Qué ha hecho antes para que lo encuentren?"<br>"¿Qué es lo que más le ha frenado hasta hoy para resolver esto?"</div>
+<div class="safe">Para cerrar: "Entonces lo que más le pesa es [dolor], ¿verdad?" Espera el sí antes de seguir.</div>
+</div></details></div>
+
+<h3>Smart questions por giro</h3>
+<p class="tip">Usa dos o tres por visita. Son preguntas abiertas: no sugieren respuesta.</p>
+<div class="card"><details><summary>Restaurantes y taquerías</summary><div class="in"><div class="say">"¿Cuántos clientes nuevos le llegan de alguien que no lo conocía?"<br>"¿Qué le gustaría que pasara con su clientela en el próximo año?"</div></div></details></div>
+<div class="card"><details><summary>Talleres mecánicos</summary><div class="in"><div class="say">"Cuando le recomiendan, ¿la persona lo busca en Google antes de llamar?"<br>"¿Cuántos trabajos rechaza al mes por falta de espacio o de tiempo?"</div></div></details></div>
+<div class="card"><details><summary>Salud (dentistas, consultorios, fisioterapia)</summary><div class="in"><div class="say">"¿Sus pacientes le buscan después en Google o solo por recomendación?"<br>"¿Hoy tiene reseñas en su ficha de Google? ¿Qué le gustaría que dijeran?"</div></div></details></div>
+<div class="card"><details><summary>Salones y estéticas</summary><div class="in"><div class="say">"¿Quién llega a su perfil y termina agendando?"<br>"¿Qué clientas nuevas le gustaría tener el próximo año?"</div></div></details></div>
+<div class="card"><details><summary>Salones de eventos y wedding planners</summary><div class="in"><div class="say">"¿Cómo le llegan hoy los eventos: por referencia, por redes o por búsqueda?"<br>"¿Cuántas fechas se le quedaron libres el año pasado?"</div></div></details></div>
+<div class="card"><details><summary>Gimnasios</summary><div class="in"><div class="say">"¿Qué es lo primero que busca alguien antes de inscribirse?"<br>"¿Cuántas personas le preguntaron horarios que no encontraron en ningún lado?"</div></div></details></div>
+<div class="card"><details><summary>Tiendas de ropa</summary><div class="in"><div class="say">"¿Sus clientes llegan de paso o buscan la tienda antes de venir?"<br>"¿Qué le gustaría que vieran antes de visitarla?"</div></div></details></div>
+<div class="card"><details><summary>Ferreterías y tlapalerías</summary><div class="in"><div class="say">"¿Quién le compra hoy: el vecino o el contratista que llega a la zona?"<br>"¿Cuántos contratistas nuevos le llegaron el último año?"</div></div></details></div>
+<div class="card"><details><summary>Veterinarias</summary><div class="in"><div class="say">"¿Qué pasa con los clientes que llegan de noche o en fin de semana?"<br>"¿Cómo le encuentran hoy los dueños de mascotas nuevos en la zona?"</div></div></details></div>
+<div class="card"><details><summary>Escuelas de idiomas</summary><div class="in"><div class="say">"¿Cómo llegan hoy sus alumnos: recomendación, redes o búsqueda?"<br>"¿Qué grupos le gustaría llenar en el próximo ciclo?"</div></div></details></div>
+<div class="card"><details><summary>Hospedaje</summary><div class="in"><div class="say">"¿Qué porcentaje de sus reservas le llega por plataforma?"<br>"¿Qué le gustaría reservar directo, sin comisión?"</div></div></details></div>
+<div class="card"><details><summary>Farmacias</summary><div class="in"><div class="say">"¿Cómo le encuentra la gente que se muda o llega de paso?"<br>"¿Qué le preguntan más seguido los clientes nuevos?"</div></div></details></div>
+<div class="card"><details><summary>Constructoras e inmobiliarias</summary><div class="in"><div class="say">"¿Cómo llegan sus clientes: por referencia, por inmobiliaria o por búsqueda?"<br>"¿Qué le gustaría que vieran antes de la primera cotización?"</div></div></details></div>
+<div class="card"><details><summary>Florerías</summary><div class="in"><div class="say">"¿Qué fechas le dejan más ventas y cuál le gustaría fortalecer?"<br>"¿Cuántos pedidos le llegan de gente que nunca lo ha visto?"</div></div></details></div>
+<div class="card"><details><summary>Lavanderías</summary><div class="in"><div class="say">"¿Qué clientes le gustaría tener que hoy no pasan por aquí?"<br>"¿Qué tanto le pesa que le encuentren horarios incorrectos?"</div></div></details></div>
+<div class="card"><details><summary>Despachos profesionales</summary><div class="in"><div class="say">"¿Cómo le llegan hoy sus clientes nuevos?"<br>"¿Qué le gustaría que aparezca cuando alguien busca su nombre?"</div></div></details></div>
+<div class="card"><details><summary>Academias de negocios, coaching, idiomas empresariales</summary><div class="in"><div class="say">"¿Qué resultado busca el alumno que le llega antes de inscribirse?"<br>"¿Qué le ha pedido la gente que no le pudo dar?"</div></div></details></div>
+<p class="tip">Para sectores ámbar y rojo, usa estas preguntas solo después de la revisión legal correspondiente (salud, legal, financiero, fintech).</p>
+
+<h2 id="diagnostico">3. Diagnóstico de retorno <span class="slide">slide 3 · QR 1</span></h2>
+<div class="card" open><details open><summary>Guion del diagnóstico</summary><div class="in">
+<div class="say">"Primero, veamos lo que su negocio ya vale." (Abre el QR con el cliente.)</div>
+<div class="say">"¿Cuál es el ticket promedio de cada cliente suyo?" (Lo captura en el QR.)</div>
+<div class="say">"Supongamos, con sus datos, [número] clientes nuevos al mes que lleguen gracias a su estructura digital. Con su ticket, eso son [ticket] × [número]. Ese número sale de lo que usted nos dio."</div>
+<div class="note">🟠 <b>"Lo que su negocio ya vale."</b> Suena a valuación. Versión segura: "Lo que su negocio podría sumar con clientes nuevos por digital."</div>
+<div class="note">🟠 <b>"Una persona nueva al día."</b> Es un supuesto, no nuestra promesa. Si el cliente dice otro número, se usa el suyo.</div>
+<div class="note">🟠 <b>"Retorno estimado no estándar"</b> (texto del QR). Cámbialo por "estimación con sus datos" antes de presentarlo.</div>
+<div class="note">🟠 <b>"Estimado, no proyección."</b> El diagnóstico no es una proyección de Mantis. Dilo una vez y úsalo siempre.</div>
+</div></details></div>
+
+<h2 id="situacion">4. Así es hoy, sin nosotros <span class="slide">slides 4 y 7</span></h2>
+<div class="card" open><details open><summary>Slide 4: lo que se pierde cada mes</summary><div class="in">
+<div class="say">"Cada mes sin que lo encuentren, ese dinero se queda con quien sí aparece. Su negocio ya tiene lo más difícil: el producto y los clientes que confían en él. Lo que falta es un paso."</div>
+<div class="note">🟠 <b>"Ese dinero se lo lleva su competencia."</b> Presión competitiva sin dato que lo respalde. Versión segura: "Quien aparece primero se queda con esos clientes."</div>
+</div></details></div>
+<div class="card" open><details open><summary>Slide 7: qué pasa hoy</summary><div class="in">
+<div class="say">"Hoy, si el cliente lo busca y no lo encuentra, compra en otro lado."</div>
+<div class="note">🟠 <b>"Le compra a otro."</b> Es una descripción del comportamiento, no una estadística. Si el cliente lo discute: "Si no lo encuentran, esa venta se va a quien sí aparece."</div>
+</div></details></div>
+
+<h2 id="radar">5. Radar de oportunidad <span class="slide">slide 5 · QR 2</span></h2>
+<div class="card" open><details open><summary>Guion del radar</summary><div class="in">
+<div class="say">"¿Quién aparece cuando lo buscan a usted?" (Abre el QR del radar con su giro y zona.)</div>
+<div class="say">"Según nuestro radar, que junta varias fuentes y las cita aquí, en [zona] se buscan [cifra] pesos al mes en [giro]. Hoy esa demanda se la queda quien aparece primero."</div>
+<div class="say">"Un 5% de ese mercado son [cifra]. Usted y nosotros podemos hacer esa cuenta juntos, con sus números."</div>
+<div class="safe">El cliente hace la suma, la resta y la división con nosotros. Él se imagina el resultado en su negocio; no le decimos cuánto va a ganar.</div>
+<div class="note">🟠 <b>"Ese lugar no se queda vacío."</b> Está bien si el radar lo muestra. Si no lo muestra, no se dice.</div>
+<div class="note">🟠 <b>"Un 5% es una gran ganancia."</b> Se dice solo si la cifra sale de sus propios números y del radar. Si el radar muestra 2 millones, el cliente debe ver que la parte es suya, no del mercado completo.</div>
+<div class="note">🟠 <b>"Tráfico digital que casi nadie ha reclamado."</b> Solo se dice si el radar lo muestra para su giro y zona. Di "según nuestro radar" siempre.</div>
+</div></details></div>
+
+<h2 id="vision">6. Así llega un cliente nuevo <span class="slide">slide 8</span></h2>
+<div class="card" open><details open><summary>Guion del flujo</summary><div class="in">
+<div class="say">"Así llega un cliente nuevo: lo busca en Google o en una IA, encuentra su sitio, le escribe o agenda, y llega a su negocio. Mientras usted atiende, su sitio sigue trabajando."</div>
+<div class="note">🟠 <b>"Los motores de IA se basan en negocios con muy buena estructura digital."</b> Se dice como tendencia: "Google y las IA no siempre muestran al mejor negocio; muchas veces muestran al que mejor se ve armado: sitio claro, ficha completa, presencia consistente y reseñas."</div>
+</div></details></div>
+
+<h2 id="metodo">7. Método y simulador <span class="slide">slides 9 y 10</span></h2>
+<div class="card" open><details open><summary>Slide 9: los tres pasos</summary><div class="in">
+<div class="say">"Trabajamos en tres pasos: diagnóstico, construcción y acompañamiento. En 7 días desde que nos entrega sus materiales, su sitio está listo."</div>
+<div class="note">🟠 <b>"Esta semana."</b> El slide dice "esta semana"; el contrato dice 7 días desde que llegan los materiales completos. Usa el contrato.</div>
+</div></details></div>
+<div class="card" open><details open><summary>Slide 10: el simulador</summary><div class="in">
+<div class="say">"Véalo con su propio nombre. Esto es cómo se vería su sitio: los apartados de agendar, conózcanos, servicios y contacto. Es una versión más sencilla que el sitio final."</div>
+<div class="note">🟠 <b>"Plantilla."</b> No se usa nunca. Siempre "cómo se vería su sitio".</div>
+<div class="note">🟠 <b>"Un sitio que genera credibilidad aumenta hasta X% la probabilidad de compra."</b> Sin fuente verificada, no se dice. Versión segura: "Un sitio que transmite confianza hace que el cliente llegue decidido, no con dudas."</div>
+</div></details></div>
+
+<h2 id="que-construimos">8. Lo que construimos <span class="slide">slide 11</span></h2>
+<div class="card" open><details open><summary>Guion</summary><div class="in">
+<div class="say">"Esto es lo que construimos para usted: para que su negocio sea más visible que su competencia, y para que destaque digitalmente en su mercado."</div>
+<div class="note">🟠 <b>"Monopolizar digitalmente su nicho."</b> Suena a quitarle espacio a otros y a exclusividad que el contrato no define en la visita. Versión segura: "Destacar digitalmente en su mercado." Si la quieres usar, tiene que quedar con la nota.</div>
+<div class="note">🟠 <b>"Un solo negocio por giro y zona."</b> Sí se dice en la visita: "Trabajamos con un solo negocio por giro y zona." Las cláusulas del contrato no se mencionan aquí.</div>
+</div></details></div>
+
+<h2 id="bonos">9. Bonos <span class="slide">slides 12 a 19</span></h2>
+<div class="card" open><details open><summary>Lo que se apila</summary><div class="in">
+<table>
+<tr><th>Concepto</th><th>Qué se dice</th><th>Valor de referencia</th></tr>
+<tr><td>Pieza 01: Sitio web profesional</td><td>Diseñado para su giro, rápido en cualquier celular y listo para que lo encuentren.</td><td>$9,500</td></tr>
+<tr><td>Pieza 02: Mantenimiento y cambios, 12 meses</td><td>Un año de ajustes: precios, fotos, horarios. Usted nos pide el cambio y nosotros lo hacemos.</td><td>$7,800</td></tr>
+<tr><td>Pieza 03: Base técnica</td><td>Dominio primer año y hosting con seguridad.</td><td>$3,500</td></tr>
+<tr><td>Bono 1: Guía de primeros pasos</td><td>Una guía en PDF para sacarle provecho a su sitio desde el primer día.</td><td>$450</td></tr>
+<tr><td>Bono 2: Presencia física conectada</td><td>Códigos QR para su mostrador que llevan a su sitio y reseñas.</td><td>$350</td></tr>
+<tr><td>Bono 3: Optimización de Google Maps</td><td>Que lo encuentren cuando alguien busca su giro en Maps.</td><td>$1,500</td></tr>
+<tr><td>Bono 4: Dirección de contenido de marca</td><td>Le damos una estrategia de post: 4 al mes, uno por semana, para que usted los publique.</td><td>$3,500</td></tr>
+</table>
+<div class="note">🟠 <b>"Que sea la primera opción de Maps."</b> No se puede garantizar. Versión segura: "Trabajamos para que lo encuentren cuando alguien busca su giro en Maps."</div>
+<div class="note">🟠 <b>Valores de referencia.</b> Antes de mostrar el tachado de $26,600, cada valor debe tener una cotización de mercado que lo respalde. Si no la tienes, di "valor de referencia" y no "valor de mercado".</div>
+<div class="note">🟠 <b>"Esto ya es suyo, además de todo lo anterior."</b> Solo se usa en los bonos 2 a 4, que son parte del paquete.</div>
+</div></details></div>
+
+<h2 id="precio">10. Inversión, cupo y garantía <span class="slide">slides 20 a 22</span></h2>
+<div class="card" open><details open><summary>Inversión</summary><div class="in">
+<div class="say">"Su inversión es de $6,790 con IVA incluido. Puede apartar con el 50%, $3,395, y el resto al entregar."</div>
+<div class="safe">Del segundo año en adelante: $1,974 al año, por dominio y mantenimiento. Dilo siempre, sin esconderlo.</div>
+<div class="note">🟠 <b>"Todo lo que recibe."</b> El detalle de piezas y bonos se muestra en la tabla. No digas "todo lo que se vale".</div>
+</div></details></div>
+<div class="card" open><details open><summary>Cupo</summary><div class="in">
+<div class="say">"Trabajamos con 22 negocios al año, para cuidar cada alianza."</div>
+<div class="safe">El cupo es real. Úsalo como razón de atención, no como presión.</div>
+</div></details></div>
+<div class="card" open><details open><summary>Garantía</summary><div class="in">
+<div class="say">"Usted no corre el riesgo. Su sitio está entregado en 7 días desde que recibimos sus materiales. Si no cumplimos, le devolvemos lo que haya pagado. Y durante 12 meses, los cambios de su web van incluidos."</div>
+<div class="note">🟠 <b>"Todo lo que le prometemos."</b> No se dice en la visita. Lo que se garantiza es lo que está en el anexo del contrato: entrega, plazos y devolución.</div>
+</div></details></div>
+
+<h2 id="mentoria">11. Mentoría y después <span class="slide">slide 22</span></h2>
+<div class="card" open><details open><summary>Guion</summary><div class="in">
+<div class="say">"Nuestro principal modelo de negocio no es vender esta estrategia digital, sino formar una alianza a largo plazo, con seguimiento y reportes medibles. Después de entregarle su sitio, tendrá una mentoría de [valor de referencia] con un mentor que le explica cómo sacarle más provecho a su negocio en digital. Ahí vemos juntos cómo seguir, si le interesa."</div>
+<div class="note">🟠 <b>"Escalar hasta 8X las utilidades."</b> No se dice como resultado. Si la quieres usar, es como objetivo de la mentoría, sin cifra. No tenemos casos verificados.</div>
+<div class="note">🟠 <b>"Ganar, ganar."</b> Se puede decir, pero el cliente debe sentir que es una alianza real: que él también aporta algo (su negocio, su inversión y su tiempo).</div>
+<div class="note">🟠 <b>"Sesión completamente gratuita."</b> La mentoría va dentro del paquete; "gratuita" suena a regalo. Versión segura: "Incluida en su paquete."</div>
+<div class="safe"><b>Mensualidad y comisión:</b> no se mencionan en la visita. Se ofrecen después de la mentoría, y solo si el negocio las necesita. El precio es aparte de los $6,790 y se acuerda por escrito.</div>
+</div></details></div>
+
+<h2 id="cierre">12. Cierre y formas de pago <span class="slide">slide 23</span></h2>
+<div class="card" open><details open><summary>Preguntas de cierre</summary><div class="in">
+<div class="say">"Usted decide cómo pagar. ¿Prefiere apartar hoy con transferencia, tarjeta de crédito o tarjeta de débito? ¿O prefiere efectivo?"</div>
+<div class="say">"¿Qué le haría falta para decidir hoy?"</div>
+<div class="say">"Si le parece bien, aparto su lugar con el 50%, $3,395, y en 7 días desde que nos manda sus materiales empezamos."</div>
+<div class="safe">El precio es el mismo con cualquier forma de pago. Dilo si preguntan.</div>
+<div class="note">🟠 <b>"Si no contrata con nosotros, contratará a otro."</b> Es un recordatorio para el equipo, no para el cliente. No se dice en la visita.</div>
+<div class="safe">Si el cliente dice que no, pregunta una vez: "¿Qué le haría falta para decidir?" y agenda un seguimiento con fecha.</div>
+</div></details></div>
+
+<h2 id="frases-idea">12.5 Frases de tu idea (naranja)</h2>
+<div class="card" open><details open><summary>Se dicen con la versión segura junto a cada una</summary><div class="in">
+<div class="note">🟠 <b>"Usted se lleva un cacho de ese pastel."</b><br>
+<b>Riesgo:</b> suena a que el mercado ya es suyo. La demanda del radar no es ingreso.<br>
+<b>Versión segura:</b> "Según el radar, una parte de esa demanda puede llegar a su negocio si aparece cuando lo buscan. Hagamos la cuenta con sus números."</div>
+<div class="note">🟠 <b>"Todo ese market cap lo puede capitalizar."</b><br>
+<b>Riesgo:</b> "market cap" es un término financiero que el cliente no usa, y suena a valuación del negocio.<br>
+<b>Versión segura:</b> "Toda esa demanda que busca [giro] en [zona] es la que su negocio puede atender."</div>
+<div class="note">🟠 <b>"Trabaje menos y gane más."</b><br>
+<b>Riesgo:</b> promesa de resultado. El paquete no la garantiza.<br>
+<b>Versión segura:</b> "Usted atiende a quien ya llegó; nosotros nos encargamos de que lleguen más."</div>
+<div class="note">🟠 <b>"Que duerma tranquilo."</b><br>
+<b>Riesgo:</b> promesa de bienestar. Lo que sí entregamos es el sitio en 7 días y los cambios por 12 meses.<br>
+<b>Versión segura:</b> "Usted se queda con su negocio; nosotros nos encargamos de que el sitio esté listo y de los cambios durante un año."</div>
+<div class="note">🟠 <b>"Facturan el triple."</b><br>
+<b>Riesgo:</b> es un dato sobre terceros que no podemos comprobar.<br>
+<b>Versión segura:</b> "En [zona] hay negocios de [giro] con menos experiencia que el suyo que aparecen primero en Google, porque tienen ficha completa y sitio. Eso se lo puedo enseñar en vivo."<br>
+<span class="tip">Solo se dice si se revisó la búsqueda en vivo ese día.</span></div>
+</div></details></div>
+
+<h2 id="disparadores">13. Disparadores sin cifras</h2>
+<div class="card" open><details open><summary>Lo que sí funciona sin estadísticas inventadas</summary><div class="in">
+<ul>
+<li><b>Pérdida concreta:</b> "Según nuestro radar, en [zona] se buscan [cifra] al mes en [giro], y hoy eso se lo queda quien aparece primero."</li>
+<li><b>Especificidad:</b> nombre del negocio, giro y colonia. Nada genérico.</li>
+<li><b>Escasez real:</b> "Trabajamos con 22 negocios al año." Es la única urgencia que se puede sostener.</li>
+<li><b>Autoridad:</b> "Nuestro radar junta varias fuentes y las cita." y "Según INEGI…" con la fuente visible.</li>
+<li><b>Prueba social:</b> hoy no hay casos. Cuando haya el primero, será el disparador más fuerte. Mientras tanto, no se simula.</li>
+<li><b>Visualización:</b> "Imagínese que su negocio aparece cuando alguien busca [giro] en [colonia]."</li>
+</ul>
+<div class="note">🟠 <b>"Cuesta menos que pagarle un empleado, trabaja las 24 horas, no se enferma y no lo demanda."</b><br>
+<b>Riesgo:</b> compara un pago único con un sueldo mensual, y el sitio no atiende llamadas ni cierra ventas. El cliente lo va a notar y se siente engañado. "No lo demanda" suena a broma sobre personas. Además contradice "usted atiende; nosotros nos encargamos de que lo encuentren".<br>
+<b>Versión segura:</b> "Su sitio y su ficha están abiertos a toda hora para que lo encuentren, aunque usted esté cerrado. Quien atiende sigue siendo usted."<br>
+<span class="tip">Si el cliente pregunta cuánto le costaría un empleado, no se compara con cifras nuestras. Se hace la cuenta con su sueldo real, y el resultado lo pone él.</span></div>
+</div></details></div>
+
+<h3>Estadísticas verificadas (INEGI)</h3>
+<div class="card" open><details open><summary>Lo que sí se puede citar</summary><div class="in">
+<div class="safe">Usuarios de internet en México, 2023: 97 millones, el 81.2% de la población de 6 años o más. (ENDUTIH 2023, INEGI.)</div>
+<div class="safe">En 2021, casi 9 de cada 10 usuarios de internet lo usaban para buscar información (89.9%). Dilo así: "Casi 9 de cada 10 usuarios de internet en México lo usan para buscar información." (ENDUTIH 2021, INEGI.)</div>
+<div class="safe">Usuarios de internet pasaban en promedio 4.8 horas diarias conectados en 2021, contra 3.9 en 2019. (ENDUTIH 2021, INEGI.)</div>
+<div class="safe">Solo 20.7% de las unidades económicas usaban internet para su actividad en 2019. (Censo Económico 2019, INEGI.)</div>
+<div class="note">🟠 <b>"8 de cada 10 buscan en Google antes de consumirte."</b> No aparece en ninguna fuente verificada. No se usa.</div>
+<div class="note">🟠 <b>"6 horas al día en el celular."</b> No está verificado. Si lo quieres, la versión segura es: "Según INEGI, usamos internet casi cinco horas al día."</div>
+<div class="note">🟠 <b>"Una estrategia digital sube hasta 90% o 98% la probabilidad de compra."</b> Cifra inventada. No se usa.</div>
+<div class="note">🟠 <b>"Anuncios carísimos en la tele, la radio y la sección amarilla."</b> Se dice sin cifra: "Antes, para que lo conocieran, tenía que pagar anuncios caros en la sección amarilla, la radio o la tele, sin saber cuántos clientes llegaban por ellos. Hoy cada visita a su ficha, cada clic y cada llamada se puede contar."</div>
+</div></details></div>
+
+<h2 id="prohibidas">14. Frases que no se dicen</h2>
+<div class="card" open><details open><summary>Lista corta</summary><div class="in">
+<ul>
+<li>"Garantizado", "100%", "seguro que funciona".</li>
+<li>"Primera opción de Maps" o "primer lugar en Google".</li>
+<li>"El 8 de cada 10", "el 98%" o cualquier cifra sin fuente.</li>
+<li>Cifras de terceros o de resultado (ver sección 12.5 para las frases naranja con su versión segura).</li>
+<li>"Plantilla" para describir el simulador.</li>
+<li>"Regalar" o "gratis" para la mentoría.</li>
+<li>"Monopolizar" como verbo de la alianza.</li>
+<li>Cualquier precio, plazo o cupo distinto al de la presentación.</li>
+</ul>
+</div></details></div>
+
+<h2 id="checklist">15. Checklist antes de salir</h2>
+<div class="card" open><details open><summary>Antes de cerrar la visita</summary><div class="in">
+<ul>
+<li>¿El cliente habló de su dolor antes de que explicara el paquete?</li>
+<li>¿Las cifras del radar y del diagnóstico tienen fuente visible?</li>
+<li>¿Dije $6,790 con IVA incluido, y el anticipo de $3,395?</li>
+<li>¿Dije que la mensualidad y la comisión se ven después de la mentoría?</li>
+<li>¿Hice la pregunta de cierre y pedí una fecha de seguimiento si dijo que no?</li>
+<li>¿Dejé el contrato y el anexo, sin prometer nada que no esté en ellos?</li>
+</ul>
+</div></details></div>
+
+<div class="note">Si el cliente pregunta algo que no está en este manual, di: "Lo confirmo y le escribo."</div>
+
+<footer>Mantis · Speech de visita · Versión 1 · Pendientes: validar valores de referencia, cifra del radar de cada zona, cláusula de nicho y zona (solo para contrato).</footer>
+</div>
+
+<script>
+const q=document.getElementById('q');
+q.addEventListener('input',()=>{
+  const t=q.value.trim().toLowerCase();
+  document.querySelectorAll('.card').forEach(c=>{
+    c.style.display = !t || c.textContent.toLowerCase().includes(t) ? '' : 'none';
+  });
+});
+</script>
+</body>
+</html>
